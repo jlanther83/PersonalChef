@@ -1,7 +1,7 @@
 # PersonalChef Telegram Bot
 
 Sends a dinner recipe (Power Bowl / High-Protein Wrap / House Burger) every
-morning at 07:00 CET, and answers `/dinner` and `/next` on demand.
+morning at 07:00 CET, and answers `/dinner`, `/next`, and `/another` on demand.
 
 The 19 recipes in `recipes.json` are home-cook versions inspired by real dish
 names and ingredients from the Green & Protein (Tirana) menu. That menu lists
@@ -26,10 +26,12 @@ This is split into two pieces that don't depend on each other:
    (`.github/workflows/daily-dinner.yml`) that runs `send_daily.py` on a
    schedule. This runs on GitHub's servers, for free, forever, with nothing
    of yours needing to stay on. This is the part covered by this setup.
-2. **On-demand `/dinner` and `/next`** — handled by `bot.py`, which only
-   answers while it's actually running somewhere (see "Running the on-demand
-   bot" below). It is **not** running continuously right now; start it
-   whenever you want to use those commands.
+2. **On-demand `/dinner`, `/next`, and `/another`** — handled by `bot.py`,
+   which only answers while it's actually running somewhere (see "Running the
+   on-demand bot" below). It is **not** running continuously right now; start
+   it whenever you want to use those commands. This includes `/another` — if
+   you don't like the day's suggestion, this only works at the moment the bot
+   is running, same as `/dinner` and `/next`.
 
 Both sides share the same recipe rotation (`recipe_utils.py`), so whichever
 one you use on a given day always names the same dish.
@@ -57,18 +59,20 @@ without waiting for 07:00.
 - `recipe_utils.py` — shared recipe rotation + message formatting
 - `send_daily.py` — sends today's recipe via the Telegram HTTP API directly
   (no dependencies); this is what the GitHub Actions workflow runs
-- `bot.py` — the on-demand bot: `/start`, `/dinner`, `/next`
+- `bot.py` — the on-demand bot: `/start`, `/dinner`, `/next`, `/another`
 - `recipes.json` — the 19-recipe database (generated file)
 - `data/build_recipes.py` — regenerates `recipes.json` if you ever want to
   tweak an ingredient amount or nutrition figure
 - `subscriber.json` — created automatically the first time you send `/start`
   to the bot; stores your Telegram chat ID (same value as the
-  `TELEGRAM_CHAT_ID` secret above)
+  `TELEGRAM_CHAT_ID` secret above) plus which recipes `/another` has already
+  shown you today, so it never repeats a dish on the same day until every
+  recipe in the database has come up once
 
 ## Running the on-demand bot
 
-Only needed for `/dinner` and `/next` — the daily 07:00 message works without
-this.
+Only needed for `/dinner`, `/next`, and `/another` — the daily 07:00 message
+works without this.
 ```
 pip install -r requirements.txt
 cp .env.example .env   # then paste your bot token into .env
