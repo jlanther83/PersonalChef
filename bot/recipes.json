@@ -799,5 +799,239 @@
       "carbs_g": 77.0,
       "fat_g": 25.9
     }
+  },
+  {
+    "id": "bowl-fit-food-fuel",
+    "name": "Fit Food Fuel Bowl",
+    "category": "Power Bowl",
+    "diet": "Omnivore",
+    "prep_min": 15,
+    "cook_min": 20,
+    "ingredients": [
+      "150 g brown rice (cooked)",
+      "140 g grilled chicken breast",
+      "60 g broccoli",
+      "70 g chickpeas (cooked)",
+      "40 g cucumber",
+      "25 g white cheese",
+      "5 g sesame seeds"
+    ],
+    "dressings": [
+      {
+        "label": "Sharp Vinaigrette",
+        "components": [
+          "2 tbsp olive oil",
+          "1 tbsp red wine vinegar",
+          "1 tsp Dijon mustard"
+        ]
+      }
+    ],
+    "instructions": [
+      "Cook the brown rice according to package directions.",
+      "Season and grill the chicken breast, ~5-6 minutes per side, until cooked through. Slice.",
+      "Steam the broccoli 3-4 minutes; warm the chickpeas; dice the cucumber.",
+      "Assemble rice topped with chicken, broccoli, chickpeas, cucumber and crumbled white cheese.",
+      "Sprinkle with sesame seeds and finish with the Sharp Vinaigrette (recipe below)."
+    ],
+    "macros": {
+      "calories": 897,
+      "protein_g": 60.3,
+      "carbs_g": 65.6,
+      "fat_g": 43.7
+    }
+  },
+  {
+    "id": "bowl-chia-power",
+    "name": "Chia Power Bowl",
+    "category": "Power Bowl",
+    "diet": "Vegan",
+    "prep_min": 15,
+    "cook_min": 15,
+    "ingredients": [
+      "130 g quinoa (cooked)",
+      "60 g avocado",
+      "50 g edamame",
+      "40 g cucumber",
+      "40 g hummus",
+      "15 g chia seeds"
+    ],
+    "dressings": [
+      {
+        "label": "Beet & PB Sauce",
+        "components": [
+          "2 tbsp beet puree",
+          "1 tbsp peanut butter",
+          "a splash of soy sauce"
+        ]
+      }
+    ],
+    "instructions": [
+      "Cook the quinoa according to package directions.",
+      "Steam or boil the edamame for 3-4 minutes.",
+      "Slice the avocado and dice the cucumber.",
+      "Assemble quinoa topped with avocado, edamame, cucumber and a scoop of hummus.",
+      "Sprinkle generously with chia seeds and finish with the Beet & PB Sauce (recipe below)."
+    ],
+    "macros": {
+      "calories": 568,
+      "protein_g": 23.3,
+      "carbs_g": 57.6,
+      "fat_g": 30.3
+    }
+  },
+  {
+    "id": "wrap-muscle-builder",
+    "name": "Muscle Builder Wrap",
+    "category": "High-Protein Wrap",
+    "diet": "Omnivore",
+    "prep_min": 15,
+    "cook_min": 15,
+    "ingredients": [
+      "1 spinach & flax-seed wrap",
+      "130 g grilled chicken breast",
+      "60 g quinoa (cooked)",
+      "40 g hummus",
+      "20 g arugula",
+      "30 g cucumber"
+    ],
+    "dressings": [
+      {
+        "label": "Sharp Vinaigrette",
+        "components": [
+          "2 tbsp olive oil",
+          "1 tbsp red wine vinegar",
+          "1 tsp Dijon mustard"
+        ]
+      }
+    ],
+    "instructions": [
+      "Cook the quinoa; season and grill the chicken breast 5-6 minutes per side, then slice.",
+      "Slice the cucumber and warm the wrap briefly for pliability.",
+      "Spread hummus over the wrap, then layer arugula, quinoa, chicken and cucumber.",
+      "Drizzle with Sharp Vinaigrette (recipe below), fold in the sides, and roll tightly."
+    ],
+    "macros": {
+      "calories": 788,
+      "protein_g": 54.1,
+      "carbs_g": 50.7,
+      "fat_g": 41.1
+    }
+  },
+  {
+    "id": "wrap-fit-wrap",
+    "name": "Fit Wrap",
+    "category": "High-Protein Wrap",
+    "diet": "Omnivore",
+    "prep_min": 10,
+    "cook_min": 12,
+    "ingredients": [
+      "1 spinach & flax-seed wrap",
+      "120 g grilled chicken breast",
+      "30 g spinach",
+      "50 g tomato",
+      "20 g white cheese",
+      "20 g lettuce"
+    ],
+    "dressings": [
+      {
+        "label": "Strong Mustard Dressing",
+        "components": [
+          "1 tbsp Dijon mustard",
+          "1 tbsp apple cider vinegar",
+          "1 tsp honey"
+        ]
+      }
+    ],
+    "instructions": [
+      "Season and grill or pan-sear the chicken breast, ~5-6 minutes per side, until cooked through. Slice thin.",
+      "Dice the tomato and crumble the white cheese; warm the wrap briefly for pliability.",
+      "Layer lettuce, spinach, chicken, tomato and white cheese on the wrap.",
+      "Drizzle with Strong Mustard Dressing (recipe below), fold in the sides, and roll tightly."
+    ],
+    "macros": {
+      "calories": 489,
+      "protein_g": 49.5,
+      "carbs_g": 41.2,
+      "fat_g": 13.8
+    }
+  },
+  {
+    "id": "burger-gjelber-garden",
+    "name": "Gjelber Garden Burger",
+    "category": "House Burger",
+    "diet": "Vegan",
+    "prep_min": 15,
+    "cook_min": 12,
+    "ingredients": [
+      "1 aronia & chia-seed bun",
+      "130 g vegan lentil patty",
+      "50 g avocado",
+      "40 g tomato",
+      "30 g cucumber",
+      "20 g lettuce"
+    ],
+    "dressings": [
+      {
+        "label": "Beet & PB Sauce",
+        "components": [
+          "2 tbsp beet puree",
+          "1 tbsp peanut butter",
+          "a splash of soy sauce"
+        ]
+      }
+    ],
+    "instructions": [
+      "Form and pan-fry the lentil patty, 3-4 minutes per side, until golden and heated through.",
+      "Slice the avocado, tomato and cucumber.",
+      "Toast the bun cut-side down for 1-2 minutes.",
+      "Build the burger: bun base, lettuce, lentil patty, avocado, tomato, cucumber.",
+      "Drizzle with the Beet & PB Sauce (recipe below), then close with the top bun."
+    ],
+    "macros": {
+      "calories": 652,
+      "protein_g": 26.4,
+      "carbs_g": 77.4,
+      "fat_g": 28.8
+    }
+  },
+  {
+    "id": "burger-leaf-avocado-toast",
+    "name": "Leaf Avocado Toast Burger",
+    "category": "House Burger",
+    "diet": "Vegetarian",
+    "prep_min": 10,
+    "cook_min": 10,
+    "ingredients": [
+      "1 aronia & chia-seed bun",
+      "80 g avocado",
+      "2 boiled eggs",
+      "20 g white cheese",
+      "40 g tomato",
+      "20 g spinach"
+    ],
+    "dressings": [
+      {
+        "label": "Greek Yogurt & Herb Sauce",
+        "components": [
+          "3 tbsp Greek yogurt",
+          "1 tbsp chopped dill or parsley",
+          "1 small garlic clove, grated",
+          "a squeeze of lemon"
+        ]
+      }
+    ],
+    "instructions": [
+      "Boil the eggs for 8-9 minutes, cool, peel and slice.",
+      "Slice the avocado and tomato; crumble the white cheese.",
+      "Toast the bun cut-side down for 1-2 minutes.",
+      "Build the burger: bun base, spinach, mashed avocado, egg, tomato, white cheese.",
+      "Drizzle with the Greek Yogurt & Herb Sauce (recipe below), then close with the top bun."
+    ],
+    "macros": {
+      "calories": 589,
+      "protein_g": 29.3,
+      "carbs_g": 49.2,
+      "fat_g": 31.1
+    }
   }
 ]

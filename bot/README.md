@@ -5,12 +5,19 @@ morning at 07:00 CET, and answers `/dinner`, `/next`, and `/another` on demand
 -- entirely through GitHub Actions, so nothing needs to stay running on your
 own computer.
 
-The 19 recipes in `recipes.json` are home-cook versions inspired by real dish
-names and ingredients from the Green & Protein (Tirana) menu. That menu lists
-dishes and prices only — no home quantities, cook times, steps, or nutrition —
-so the quantities, steps, and macros here are original, with macros estimated
-from standard nutrition data (see `data/build_recipes.py` for the numbers
-used). They are estimates, not lab-measured values.
+The 25 recipes in `recipes.json` are home-cook versions inspired by real
+dishes from Tirana healthy-food spots:
+- 19 inspired by the **Green & Protein** menu (dish names + ingredients, no
+  home quantities, cook times, steps, or nutrition given).
+- 6 more inspired by the signature-dish descriptions of **Fit Food**,
+  **Gjelber**, **Leaf**, and **Chia Healthy Bar** (found via general
+  write-ups about each place, since their own menus are behind JS-driven
+  delivery apps that couldn't be scraped for exact ingredient lists).
+
+In both cases only the dish concept/name and general ingredients came from
+the real place — quantities, steps, and macros here are original, with
+macros estimated from standard nutrition data (see `data/build_recipes.py`
+for the numbers used). They are estimates, not lab-measured values.
 
 Dressings/sauces are built from the master formulas provided by the user
 (Lemon & Parsley, Strong Mustard, Japanese Soya, Smokey Soul, Beet & PB Sauce)
@@ -81,7 +88,7 @@ tab → pick the workflow → **Run workflow**, to test without waiting.
   (see below) — answers instantly, but **do not run it at the same time as
   `respond-commands.yml`**; two pollers on the same bot token intermittently
   conflict (Telegram returns HTTP 409 to whichever one is second)
-- `recipes.json` — the 19-recipe database (generated file)
+- `recipes.json` — the 25-recipe database (generated file)
 - `data/build_recipes.py` — regenerates `recipes.json` if you ever want to
   tweak an ingredient amount or nutrition figure
 

@@ -1,10 +1,13 @@
 """
 Generates recipes.json from ingredient quantities + a small nutrition reference table.
 
-Recipes are home-cook versions inspired by real dish names/ingredients from the
-Green & Protein (Tirana) menu -- that menu lists dishes and ingredients but no
-home quantities, times, steps, or nutrition, so those are original here.
-Macros are estimates from standard per-100g nutrition figures, not lab values.
+Recipes are home-cook versions inspired by real dishes from Tirana healthy-food
+spots: most from the Green & Protein menu (dish names/ingredients, no home
+quantities/times/steps/nutrition given), plus a handful inspired by signature
+dishes from Fit Food, Gjelber, Leaf, and Chia Healthy Bar (sourced from general
+write-ups about each place, not their own menus, which are behind JS-driven
+delivery apps). Quantities, steps, and macros are original either way. Macros
+are estimates from standard per-100g nutrition figures, not lab values.
 
 Run: python3 build_recipes.py   (writes ../recipes.json)
 """
@@ -47,6 +50,7 @@ NUTRITION = {
     "radicchio":                ("g",     23,  1.4, 4.5, 0.2),
     "white_cheese":             ("g",     264, 14.0, 4.0, 21.0),
     "sesame_seeds":             ("g",     573, 17.7, 23.4, 49.7),
+    "chia_seeds":               ("g",     486, 16.5, 42.1, 30.7),
     "spinach_flax_wrap":        ("piece", 180, 7.0, 30.0, 4.0),
     "aronia_chia_bun":          ("piece", 200, 6.5, 35.0, 3.5),
 }
@@ -136,6 +140,7 @@ DISPLAY = {
     "radicchio": "radicchio",
     "white_cheese": "white cheese",
     "sesame_seeds": "sesame seeds",
+    "chia_seeds": "chia seeds",
     "spinach_flax_wrap": "spinach & flax-seed wrap",
     "aronia_chia_bun": "aronia & chia-seed bun",
 }
@@ -437,6 +442,94 @@ RECIPES = [
             "Toast the bun cut-side down for 1-2 minutes.",
             "Build the burger: bun base, lettuce, lentil patty, tomato, cucumber, red onion.",
             "Drizzle with Japanese Soya Dressing and Beet & PB Sauce (recipes below), then close with the top bun.",
+        ],
+    ),
+
+    # ---------------- INSPIRED BY OTHER TIRANA HEALTHY-FOOD SPOTS ----------------
+    # Fit Food, Gjelber, Leaf, and Chia Healthy Bar publish general style/signature
+    # dish descriptions rather than detailed recipes (see build_recipes.py history
+    # for sourcing notes), so these are original recipes built around each place's
+    # known specialty rather than a copied dish.
+    dict(
+        id="bowl-fit-food-fuel", name="Fit Food Fuel Bowl", category="Power Bowl", diet="Omnivore",
+        prep_min=15, cook_min=20,
+        items=[("brown_rice_cooked", 150), ("chicken_breast_cooked", 140), ("broccoli", 60),
+               ("chickpeas_cooked", 70), ("cucumber", 40), ("white_cheese", 25), ("sesame_seeds", 5)],
+        dressings=["sharp_vinaigrette"],
+        instructions=[
+            "Cook the brown rice according to package directions.",
+            "Season and grill the chicken breast, ~5-6 minutes per side, until cooked through. Slice.",
+            "Steam the broccoli 3-4 minutes; warm the chickpeas; dice the cucumber.",
+            "Assemble rice topped with chicken, broccoli, chickpeas, cucumber and crumbled white cheese.",
+            "Sprinkle with sesame seeds and finish with the Sharp Vinaigrette (recipe below).",
+        ],
+    ),
+    dict(
+        id="bowl-chia-power", name="Chia Power Bowl", category="Power Bowl", diet="Vegan",
+        prep_min=15, cook_min=15,
+        items=[("quinoa_cooked", 130), ("avocado", 60), ("edamame", 50), ("cucumber", 40),
+               ("hummus", 40), ("chia_seeds", 15)],
+        dressings=["beet_pb"],
+        instructions=[
+            "Cook the quinoa according to package directions.",
+            "Steam or boil the edamame for 3-4 minutes.",
+            "Slice the avocado and dice the cucumber.",
+            "Assemble quinoa topped with avocado, edamame, cucumber and a scoop of hummus.",
+            "Sprinkle generously with chia seeds and finish with the Beet & PB Sauce (recipe below).",
+        ],
+    ),
+    dict(
+        id="wrap-muscle-builder", name="Muscle Builder Wrap", category="High-Protein Wrap", diet="Omnivore",
+        prep_min=15, cook_min=15,
+        items=[("spinach_flax_wrap", 1), ("chicken_breast_cooked", 130), ("quinoa_cooked", 60),
+               ("hummus", 40), ("arugula", 20), ("cucumber", 30)],
+        dressings=["sharp_vinaigrette"],
+        instructions=[
+            "Cook the quinoa; season and grill the chicken breast 5-6 minutes per side, then slice.",
+            "Slice the cucumber and warm the wrap briefly for pliability.",
+            "Spread hummus over the wrap, then layer arugula, quinoa, chicken and cucumber.",
+            "Drizzle with Sharp Vinaigrette (recipe below), fold in the sides, and roll tightly.",
+        ],
+    ),
+    dict(
+        id="wrap-fit-wrap", name="Fit Wrap", category="High-Protein Wrap", diet="Omnivore",
+        prep_min=10, cook_min=12,
+        items=[("spinach_flax_wrap", 1), ("chicken_breast_cooked", 120), ("spinach", 30),
+               ("tomato", 50), ("white_cheese", 20), ("lettuce", 20)],
+        dressings=["strong_mustard"],
+        instructions=[
+            "Season and grill or pan-sear the chicken breast, ~5-6 minutes per side, until cooked through. Slice thin.",
+            "Dice the tomato and crumble the white cheese; warm the wrap briefly for pliability.",
+            "Layer lettuce, spinach, chicken, tomato and white cheese on the wrap.",
+            "Drizzle with Strong Mustard Dressing (recipe below), fold in the sides, and roll tightly.",
+        ],
+    ),
+    dict(
+        id="burger-gjelber-garden", name="Gjelber Garden Burger", category="House Burger", diet="Vegan",
+        prep_min=15, cook_min=12,
+        items=[("aronia_chia_bun", 1), ("vegan_lentil_patty", 130), ("avocado", 50),
+               ("tomato", 40), ("cucumber", 30), ("lettuce", 20)],
+        dressings=["beet_pb"],
+        instructions=[
+            "Form and pan-fry the lentil patty, 3-4 minutes per side, until golden and heated through.",
+            "Slice the avocado, tomato and cucumber.",
+            "Toast the bun cut-side down for 1-2 minutes.",
+            "Build the burger: bun base, lettuce, lentil patty, avocado, tomato, cucumber.",
+            "Drizzle with the Beet & PB Sauce (recipe below), then close with the top bun.",
+        ],
+    ),
+    dict(
+        id="burger-leaf-avocado-toast", name="Leaf Avocado Toast Burger", category="House Burger", diet="Vegetarian",
+        prep_min=10, cook_min=10,
+        items=[("aronia_chia_bun", 1), ("avocado", 80), ("egg_boiled", 2), ("white_cheese", 20),
+               ("tomato", 40), ("spinach", 20)],
+        dressings=["greek_yogurt_herb"],
+        instructions=[
+            "Boil the eggs for 8-9 minutes, cool, peel and slice.",
+            "Slice the avocado and tomato; crumble the white cheese.",
+            "Toast the bun cut-side down for 1-2 minutes.",
+            "Build the burger: bun base, spinach, mashed avocado, egg, tomato, white cheese.",
+            "Drizzle with the Greek Yogurt & Herb Sauce (recipe below), then close with the top bun.",
         ],
     ),
 ]
