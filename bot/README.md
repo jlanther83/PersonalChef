@@ -10,6 +10,14 @@ so the quantities, steps, and macros here are original, with macros estimated
 from standard nutrition data (see `data/build_recipes.py` for the numbers
 used). They are estimates, not lab-measured values.
 
+Dressings/sauces are built from the master formulas provided by the user
+(Lemon & Parsley, Strong Mustard, Japanese Soya, Smokey Soul, Beet & PB Sauce)
+— see the `DRESSINGS` dict in `data/build_recipes.py`. "Soybean sauce" as
+referenced in the original menu is treated as the Japanese Soya formula.
+Sharp Vinaigrette and Greek Yogurt & Herb Sauce weren't part of the supplied
+formulas, so those two are simple homemade versions — swap them in
+`build_recipes.py` and re-run it if exact formulas become available.
+
 ## Files
 - `bot.py` — the bot: commands, daily scheduler, message formatting
 - `recipes.json` — the 19-recipe database (generated file)

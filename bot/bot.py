@@ -66,6 +66,9 @@ def format_recipe(recipe: dict, heading: str) -> str:
         "*Ingredients*",
     ]
     lines += [f"• {ing}" for ing in recipe["ingredients"]]
+    for d in recipe.get("dressings", []):
+        lines += ["", f"*{d['label']}* (mix together):"]
+        lines += [f"  - {c}" for c in d["components"]]
     lines += ["", "*Instructions*"]
     lines += [f"{i}. {step}" for i, step in enumerate(recipe["instructions"], start=1)]
     lines += [
