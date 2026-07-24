@@ -1,0 +1,25 @@
+name: Daily Dinner Reminder
+
+on:
+  schedule:
+    # Runs at both 05:00 and 06:00 UTC to cover CET (UTC+1) and CEST (UTC+2)
+    # without needing to edit the cron for daylight saving. send_daily.py
+    # only actually sends a message when it's 07:00 in Europe/Berlin, so
+    # exactly one of the two runs does anything on any given day.
+    - cron: "0 5,6 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Send today's dinner recipe
+        working-directory: bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 send_daily.py

@@ -18,41 +18,63 @@ Sharp Vinaigrette and Greek Yogurt & Herb Sauce weren't part of the supplied
 formulas, so those two are simple homemade versions — swap them in
 `build_recipes.py` and re-run it if exact formulas become available.
 
+## Two independent halves
+
+This is split into two pieces that don't depend on each other:
+
+1. **Automatic 07:00 CET daily message** — a GitHub Actions workflow
+   (`.github/workflows/daily-dinner.yml`) that runs `send_daily.py` on a
+   schedule. This runs on GitHub's servers, for free, forever, with nothing
+   of yours needing to stay on. This is the part covered by this setup.
+2. **On-demand `/dinner` and `/next`** — handled by `bot.py`, which only
+   answers while it's actually running somewhere (see "Running the on-demand
+   bot" below). It is **not** running continuously right now; start it
+   whenever you want to use those commands.
+
+Both sides share the same recipe rotation (`recipe_utils.py`), so whichever
+one you use on a given day always names the same dish.
+
+## One-time setup: GitHub repository secrets
+
+The workflow needs your bot token and your Telegram chat ID, stored as
+**repository secrets** (encrypted, never visible in logs or code):
+
+1. On GitHub, open this repository → **Settings** → **Secrets and variables**
+   → **Actions**.
+2. Click **New repository secret**.
+   - Name: `TELEGRAM_BOT_TOKEN` — Value: your bot token from @BotFather.
+   - Click **Add secret**.
+3. Click **New repository secret** again.
+   - Name: `TELEGRAM_CHAT_ID` — Value: your Telegram chat ID.
+   - Click **Add secret**.
+
+Once both secrets exist, the workflow sends the message automatically every
+morning — nothing else to do. You can also trigger it manually any time from
+the **Actions** tab → **Daily Dinner Reminder** → **Run workflow**, to test it
+without waiting for 07:00.
+
 ## Files
-- `bot.py` — the bot: commands, daily scheduler, message formatting
+- `recipe_utils.py` — shared recipe rotation + message formatting
+- `send_daily.py` — sends today's recipe via the Telegram HTTP API directly
+  (no dependencies); this is what the GitHub Actions workflow runs
+- `bot.py` — the on-demand bot: `/start`, `/dinner`, `/next`
 - `recipes.json` — the 19-recipe database (generated file)
 - `data/build_recipes.py` — regenerates `recipes.json` if you ever want to
   tweak an ingredient amount or nutrition figure
-- `subscriber.json` — created automatically the first time you send `/start`;
-  stores your Telegram chat ID so the 07:00 job knows where to send
+- `subscriber.json` — created automatically the first time you send `/start`
+  to the bot; stores your Telegram chat ID (same value as the
+  `TELEGRAM_CHAT_ID` secret above)
 
-## Running it
+## Running the on-demand bot
+
+Only needed for `/dinner` and `/next` — the daily 07:00 message works without
+this.
 ```
 pip install -r requirements.txt
 cp .env.example .env   # then paste your bot token into .env
 python3 bot.py
 ```
-
-## Important: this needs to keep running
-
-Both the on-demand replies (`/dinner`, `/next`) and the 07:00 push only work
-while `bot.py` is actually running and connected to the internet — Telegram
-bots don't run "in the cloud" by themselves once you close it.
-
-**Your options, simplest first:**
-
-1. **Leave it running on your computer.** Start it (`python3 bot.py`) in a
-   terminal and leave that terminal open, with the computer on, awake, and
-   online. You can run it in the background so you don't need to keep the
-   window visible (e.g. `nohup python3 bot.py &` on Mac/Linux), but the
-   machine itself still needs to be on and connected at 07:00 for the daily
-   message to go out.
-2. **Move it to a small always-on host** if you want it independent of your
-   own computer (e.g. a cheap VPS for a few dollars a month, or a spare
-   Raspberry Pi at home). Nothing in the code needs to change — just copy
-   this `bot/` folder there, install requirements, and run it the same way
-   (ideally as a background service so it restarts itself if the machine
-   reboots). Happy to help set this up if you want it later.
-
-There is no in-between free option that requires zero ongoing setup — some
-machine, somewhere, needs to keep this process alive.
+This needs to be running and connected to the internet for those commands to
+answer. Leave it running in a terminal (`nohup python3 bot.py &` to background
+it), on any machine that's on — your own computer, a spare Raspberry Pi, or a
+small always-on host. Ask any time if you'd like help setting that up.
