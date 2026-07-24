@@ -1,0 +1,600 @@
+[
+  {
+    "id": "bowl-protein-beast",
+    "name": "Protein Beast",
+    "category": "Power Bowl",
+    "diet": "Omnivore",
+    "prep_min": 15,
+    "cook_min": 20,
+    "ingredients": [
+      "150 g brown rice (cooked)",
+      "130 g grilled chicken breast",
+      "60 g avocado",
+      "50 g sweet corn",
+      "30 g pickled radishes",
+      "1 boiled egg",
+      "5 g sesame seeds",
+      "25 g lemon & parsley dressing"
+    ],
+    "instructions": [
+      "Cook the brown rice according to package directions; keep warm.",
+      "Season the chicken breast with salt and pepper, then grill or pan-sear over medium-high heat, ~5-6 minutes per side, until cooked through (internal temp 74\u00b0C). Slice.",
+      "Boil the egg for 8-9 minutes, cool in cold water, peel, and halve.",
+      "Slice the avocado and drain the corn and pickled radishes.",
+      "Whisk the lemon & parsley dressing (olive oil, lemon juice, chopped parsley, pinch of salt).",
+      "Layer rice in a bowl, arrange chicken, avocado, corn, pickled radishes and egg on top.",
+      "Sprinkle with sesame seeds and drizzle with the dressing just before serving."
+    ],
+    "macros": {
+      "calories": 751,
+      "protein_g": 54.6,
+      "carbs_g": 56.5,
+      "fat_g": 34.2
+    }
+  },
+  {
+    "id": "bowl-sweet-tasty",
+    "name": "Sweet & Tasty",
+    "category": "Power Bowl",
+    "diet": "Omnivore",
+    "prep_min": 15,
+    "cook_min": 25,
+    "ingredients": [
+      "150 g brown rice (cooked)",
+      "130 g grilled chicken breast",
+      "100 g sweet potato (roasted)",
+      "1 boiled egg",
+      "50 g green peas",
+      "25 g pickled red onion",
+      "30 g pomegranate arils",
+      "5 g sesame seeds",
+      "25 g strong mustard dressing"
+    ],
+    "instructions": [
+      "Cube the sweet potato, toss with a little oil and salt, and roast at 200\u00b0C for 20-22 minutes until tender.",
+      "Marinate the chicken breast briefly in a splash of the mustard dressing, then grill 5-6 minutes per side until cooked through. Slice.",
+      "Cook the brown rice; boil the egg for 8-9 minutes, cool, peel and halve.",
+      "Steam or microwave the peas for 2-3 minutes.",
+      "Build the bowl: rice, chicken, roasted sweet potato, peas, pickled red onion and egg.",
+      "Top with pomegranate arils and sesame seeds, then drizzle with strong mustard dressing."
+    ],
+    "macros": {
+      "calories": 707,
+      "protein_g": 58.0,
+      "carbs_g": 77.8,
+      "fat_g": 17.4
+    }
+  },
+  {
+    "id": "bowl-tofu-mushroom",
+    "name": "Tofu & Mushroom Fix",
+    "category": "Power Bowl",
+    "diet": "Vegan",
+    "prep_min": 15,
+    "cook_min": 20,
+    "ingredients": [
+      "150 g brown rice (cooked)",
+      "150 g marinated tofu",
+      "100 g mushrooms",
+      "100 g sweet potato (roasted)",
+      "80 g chickpeas (cooked)",
+      "60 g broccoli",
+      "40 g spinach",
+      "5 g sesame seeds",
+      "25 g smokey soul dressing"
+    ],
+    "instructions": [
+      "Press and cube the tofu, marinate 10 minutes in soy sauce, garlic and a little oil.",
+      "Roast the cubed sweet potato at 200\u00b0C for 20 minutes; roast or pan-fry the mushrooms for 6-8 minutes until golden.",
+      "Pan-fry the marinated tofu 6-8 minutes, turning, until browned on most sides.",
+      "Steam the broccoli and spinach 3-4 minutes, then roughly mash together.",
+      "Warm the chickpeas and cook the rice.",
+      "Assemble rice, tofu, mushrooms, sweet potato, chickpeas and the mashed broccoli-spinach in a bowl.",
+      "Sprinkle sesame seeds and finish with smokey soul dressing."
+    ],
+    "macros": {
+      "calories": 683,
+      "protein_g": 33.7,
+      "carbs_g": 97.4,
+      "fat_g": 20.9
+    }
+  },
+  {
+    "id": "bowl-bodybuilder-plus",
+    "name": "Bodybuilder +",
+    "category": "Power Bowl",
+    "diet": "Omnivore",
+    "prep_min": 15,
+    "cook_min": 20,
+    "ingredients": [
+      "150 g brown rice (cooked)",
+      "150 g grilled chicken breast",
+      "60 g avocado",
+      "60 g broccoli",
+      "50 g carrots",
+      "50 g sweet corn",
+      "5 g sesame seeds",
+      "25 g lemon & parsley dressing"
+    ],
+    "instructions": [
+      "Cook the brown rice according to package directions.",
+      "Season and grill the chicken breast, ~5-6 minutes per side, until cooked through. Slice.",
+      "Steam the broccoli and julienne or grate the carrots.",
+      "Drain the corn; slice the avocado.",
+      "Assemble rice topped with chicken, broccoli, carrots, corn and avocado.",
+      "Sprinkle with sesame seeds and drizzle with lemon & parsley dressing."
+    ],
+    "macros": {
+      "calories": 741,
+      "protein_g": 56.4,
+      "carbs_g": 63.4,
+      "fat_g": 29.9
+    }
+  },
+  {
+    "id": "bowl-chickens-joy",
+    "name": "Chicken's Joy",
+    "category": "Power Bowl",
+    "diet": "Omnivore",
+    "prep_min": 20,
+    "cook_min": 20,
+    "ingredients": [
+      "150 g brown rice (cooked)",
+      "150 g chicken meatballs",
+      "1 boiled egg",
+      "60 g carrots",
+      "60 g tomato",
+      "40 g green peas",
+      "40 g sweet corn",
+      "5 g sesame seeds",
+      "25 g sharp vinaigrette"
+    ],
+    "instructions": [
+      "Form ground chicken into small meatballs, season, and pan-fry or bake at 200\u00b0C for 15-18 minutes until cooked through.",
+      "Cook the brown rice; boil the egg for 8-9 minutes, cool, peel and halve.",
+      "Shred the carrots, dice the tomato, and steam the peas 2-3 minutes.",
+      "Assemble rice with meatballs, egg, carrots, tomato, peas and corn.",
+      "Sprinkle with sesame seeds and finish with sharp vinaigrette."
+    ],
+    "macros": {
+      "calories": 753,
+      "protein_g": 48.8,
+      "carbs_g": 70.4,
+      "fat_g": 31.2
+    }
+  },
+  {
+    "id": "bowl-autumn-harvest",
+    "name": "Autumn Harvest",
+    "category": "Power Bowl",
+    "diet": "Omnivore",
+    "prep_min": 15,
+    "cook_min": 25,
+    "ingredients": [
+      "150 g brown rice (cooked)",
+      "130 g grilled chicken breast",
+      "60 g broccoli",
+      "80 g lentils (cooked)",
+      "30 g pickled radishes",
+      "15 g sun-dried tomatoes",
+      "1 boiled egg",
+      "40 g sweet corn",
+      "5 g sesame seeds",
+      "25 g strong mustard dressing"
+    ],
+    "instructions": [
+      "Cook the lentils (or warm pre-cooked lentils) and the brown rice.",
+      "Season and grill the chicken breast 5-6 minutes per side until cooked through. Slice.",
+      "Steam the broccoli; boil the egg for 8-9 minutes, cool, peel and halve.",
+      "Roughly chop the sun-dried tomatoes.",
+      "Assemble rice, lentils, chicken, broccoli, pickled radishes, sun-dried tomatoes, egg and corn.",
+      "Sprinkle sesame seeds and finish with strong mustard dressing."
+    ],
+    "macros": {
+      "calories": 735,
+      "protein_g": 65.0,
+      "carbs_g": 79.4,
+      "fat_g": 18.2
+    }
+  },
+  {
+    "id": "bowl-vegan-joy",
+    "name": "Vegan Joy",
+    "category": "Power Bowl",
+    "diet": "Vegan",
+    "prep_min": 20,
+    "cook_min": 20,
+    "ingredients": [
+      "150 g quinoa (cooked)",
+      "120 g vegan lentil patty",
+      "50 g edamame",
+      "80 g sweet potato (roasted)",
+      "40 g hummus",
+      "25 g pickled red onion",
+      "20 g arugula",
+      "20 g radicchio",
+      "5 g sesame seeds",
+      "25 g strong mustard dressing"
+    ],
+    "instructions": [
+      "Cook the quinoa according to package directions.",
+      "Form lentil-based patties (cooked lentils, breadcrumbs, spices, egg or flax binder) and pan-fry 3-4 minutes per side until golden.",
+      "Roast the cubed sweet potato at 200\u00b0C for 18-20 minutes.",
+      "Steam or boil the edamame for 3-4 minutes.",
+      "Assemble quinoa with the lentil patties, edamame, sweet potato, hummus, pickled onion, arugula and radicchio.",
+      "Sprinkle sesame seeds and finish with strong mustard dressing."
+    ],
+    "macros": {
+      "calories": 691,
+      "protein_g": 31.8,
+      "carbs_g": 92.4,
+      "fat_g": 23.7
+    }
+  },
+  {
+    "id": "wrap-chicken-delight",
+    "name": "Chicken Delight",
+    "category": "High-Protein Wrap",
+    "diet": "Omnivore",
+    "prep_min": 10,
+    "cook_min": 12,
+    "ingredients": [
+      "1 spinach & flax-seed wrap",
+      "120 g grilled chicken breast",
+      "25 g white cheese",
+      "40 g sweet corn",
+      "50 g tomato",
+      "30 g lettuce",
+      "20 g smokey soul dressing"
+    ],
+    "instructions": [
+      "Season and grill or pan-sear the chicken breast, ~5-6 minutes per side, until cooked through. Slice thin.",
+      "Warm the spinach & flax wrap briefly in a dry pan for pliability.",
+      "Dice the tomato and crumble the white cheese.",
+      "Lay lettuce on the wrap, then add chicken, cheese, corn and tomato.",
+      "Drizzle with smokey soul dressing, fold in the sides, and roll tightly."
+    ],
+    "macros": {
+      "calories": 542,
+      "protein_g": 50.1,
+      "carbs_g": 43.4,
+      "fat_g": 18.8
+    }
+  },
+  {
+    "id": "wrap-cool-egg",
+    "name": "Cool Egg",
+    "category": "High-Protein Wrap",
+    "diet": "Vegetarian",
+    "prep_min": 10,
+    "cook_min": 10,
+    "ingredients": [
+      "1 spinach & flax-seed wrap",
+      "2 boiled eggs",
+      "25 g white cheese",
+      "50 g tomato",
+      "30 g lettuce"
+    ],
+    "instructions": [
+      "Boil the eggs for 8-9 minutes, cool in cold water, peel and chop; toss with a pinch of dry dill.",
+      "Warm the wrap briefly for pliability.",
+      "Dice the tomato and crumble the white cheese.",
+      "Layer lettuce, chopped egg, cheese and tomato on the wrap.",
+      "Fold in the sides and roll tightly."
+    ],
+    "macros": {
+      "calories": 416,
+      "protein_g": 24.0,
+      "carbs_g": 35.0,
+      "fat_g": 20.0
+    }
+  },
+  {
+    "id": "wrap-chicken-charm",
+    "name": "Chicken Charm",
+    "category": "High-Protein Wrap",
+    "diet": "Omnivore",
+    "prep_min": 15,
+    "cook_min": 20,
+    "ingredients": [
+      "1 spinach & flax-seed wrap",
+      "80 g brown rice (cooked)",
+      "100 g grilled chicken breast",
+      "60 g black beans (cooked)",
+      "40 g carrots",
+      "40 g sweet corn",
+      "30 g lettuce",
+      "25 g Greek yogurt & herb sauce"
+    ],
+    "instructions": [
+      "Cook the brown rice; season and grill the chicken breast 5-6 minutes per side, then slice.",
+      "Warm the black beans and shred the carrots.",
+      "Warm the wrap briefly for pliability.",
+      "Layer lettuce, rice, chicken, black beans, carrots and corn on the wrap.",
+      "Drizzle with Greek yogurt & herb sauce, fold in the sides, and roll tightly."
+    ],
+    "macros": {
+      "calories": 600,
+      "protein_g": 49.1,
+      "carbs_g": 78.0,
+      "fat_g": 10.7
+    }
+  },
+  {
+    "id": "wrap-avocado-egg",
+    "name": "Avocado & Egg",
+    "category": "High-Protein Wrap",
+    "diet": "Vegetarian",
+    "prep_min": 10,
+    "cook_min": 10,
+    "ingredients": [
+      "1 spinach & flax-seed wrap",
+      "80 g avocado",
+      "2 boiled eggs",
+      "50 g tomato",
+      "30 g lettuce",
+      "15 g soybean sauce"
+    ],
+    "instructions": [
+      "Boil the eggs for 8-9 minutes, cool, peel and slice.",
+      "Slice the avocado and dice the tomato.",
+      "Warm the wrap briefly for pliability.",
+      "Layer lettuce, avocado, egg and tomato on the wrap.",
+      "Drizzle with soybean sauce, fold in the sides, and roll tightly."
+    ],
+    "macros": {
+      "calories": 485,
+      "protein_g": 23.3,
+      "carbs_g": 41.6,
+      "fat_g": 26.6
+    }
+  },
+  {
+    "id": "wrap-gut-power",
+    "name": "Gut Power",
+    "category": "High-Protein Wrap",
+    "diet": "Vegan",
+    "prep_min": 15,
+    "cook_min": 15,
+    "ingredients": [
+      "1 spinach & flax-seed wrap",
+      "100 g vegan lentil patty",
+      "40 g carrots",
+      "40 g broccoli",
+      "20 g red onion",
+      "40 g cucumber",
+      "30 g lettuce",
+      "15 g soybean sauce"
+    ],
+    "instructions": [
+      "Form and pan-fry the lentil patty, 3-4 minutes per side, until golden; roughly crumble.",
+      "Steam the broccoli 3-4 minutes; shred the carrots and slice the cucumber and red onion.",
+      "Warm the wrap briefly for pliability.",
+      "Layer lettuce, lentil patty, carrots, broccoli, red onion and cucumber on the wrap.",
+      "Drizzle with soybean sauce, fold in the sides, and roll tightly."
+    ],
+    "macros": {
+      "calories": 426,
+      "protein_g": 20.6,
+      "carbs_g": 63.4,
+      "fat_g": 11.9
+    }
+  },
+  {
+    "id": "wrap-tuna-turner",
+    "name": "Tuna Turner",
+    "category": "High-Protein Wrap",
+    "diet": "Omnivore",
+    "prep_min": 10,
+    "cook_min": 5,
+    "ingredients": [
+      "1 spinach & flax-seed wrap",
+      "100 g tuna mix",
+      "40 g sweet corn",
+      "40 g cucumber",
+      "50 g black beans (cooked)",
+      "20 g red onion",
+      "30 g lettuce",
+      "20 g smokey soul dressing"
+    ],
+    "instructions": [
+      "Mix drained tuna with a little light mayo or Greek yogurt to make the tuna mix.",
+      "Dice the cucumber and red onion; warm the black beans.",
+      "Warm the wrap briefly for pliability.",
+      "Layer lettuce, tuna mix, corn, cucumber, black beans and red onion on the wrap.",
+      "Drizzle with smokey soul dressing, fold in the sides, and roll tightly."
+    ],
+    "macros": {
+      "calories": 499,
+      "protein_g": 35.9,
+      "carbs_g": 58.6,
+      "fat_g": 15.4
+    }
+  },
+  {
+    "id": "burger-queen-premium",
+    "name": "Queen Premium",
+    "category": "House Burger",
+    "diet": "Omnivore",
+    "prep_min": 15,
+    "cook_min": 18,
+    "ingredients": [
+      "1 aronia & chia-seed bun",
+      "130 g chicken meatballs",
+      "1 boiled egg",
+      "20 g white cheese",
+      "40 g tomato",
+      "30 g cucumber",
+      "20 g lettuce",
+      "10 g soybean sauce",
+      "20 g Greek yogurt & herb sauce"
+    ],
+    "instructions": [
+      "Form the chicken meatball mixture into one flat patty and pan-fry or grill 5-6 minutes per side until cooked through.",
+      "Boil the egg for 8-9 minutes, cool, peel and slice.",
+      "Toast the bun cut-side down for 1-2 minutes.",
+      "Slice the tomato, pickled cucumber and shred the lettuce; slice the white cheese.",
+      "Build the burger: bun base, lettuce, patty, cheese, egg, tomato, cucumber.",
+      "Drizzle with soybean sauce and Greek yogurt & herb sauce, then close with the top bun."
+    ],
+    "macros": {
+      "calories": 616,
+      "protein_g": 47.0,
+      "carbs_g": 47.4,
+      "fat_g": 26.0
+    }
+  },
+  {
+    "id": "burger-duplex-day",
+    "name": "Duplex Day",
+    "category": "House Burger",
+    "diet": "Vegetarian",
+    "prep_min": 10,
+    "cook_min": 10,
+    "ingredients": [
+      "1 aronia & chia-seed bun",
+      "80 g avocado",
+      "2 boiled eggs",
+      "30 g cucumber",
+      "40 g tomato",
+      "20 g lettuce",
+      "10 g soybean sauce",
+      "20 g Greek yogurt & herb sauce"
+    ],
+    "instructions": [
+      "Boil the eggs for 8-9 minutes, cool, peel and slice.",
+      "Slice the avocado, tomato and pickled cucumber.",
+      "Toast the bun cut-side down for 1-2 minutes.",
+      "Build the burger: bun base, lettuce, avocado, egg, tomato, cucumber.",
+      "Drizzle with soybean sauce and Greek yogurt & herb sauce, then close with the top bun."
+    ],
+    "macros": {
+      "calories": 522,
+      "protein_g": 23.6,
+      "carbs_g": 47.5,
+      "fat_g": 27.2
+    }
+  },
+  {
+    "id": "burger-salmon-taste",
+    "name": "Salmon Taste",
+    "category": "House Burger",
+    "diet": "Omnivore",
+    "prep_min": 15,
+    "cook_min": 10,
+    "ingredients": [
+      "1 aronia & chia-seed bun",
+      "120 g marinated salmon",
+      "40 g tomato",
+      "30 g cucumber",
+      "20 g red onion",
+      "20 g lettuce",
+      "15 g soybean sauce"
+    ],
+    "instructions": [
+      "Marinate the salmon fillet briefly in soy sauce, then pan-sear 3-4 minutes per side until just cooked through.",
+      "Slice the tomato, cucumber and red onion.",
+      "Toast the bun cut-side down for 1-2 minutes.",
+      "Build the burger: bun base, lettuce, salmon, tomato, cucumber, red onion.",
+      "Drizzle with soybean sauce and close with the top bun."
+    ],
+    "macros": {
+      "calories": 480,
+      "protein_g": 32.8,
+      "carbs_g": 40.8,
+      "fat_g": 19.4
+    }
+  },
+  {
+    "id": "burger-queen-deluxe-xl",
+    "name": "Queen Deluxe XL",
+    "category": "House Burger",
+    "diet": "Omnivore",
+    "prep_min": 15,
+    "cook_min": 18,
+    "ingredients": [
+      "1 aronia & chia-seed bun",
+      "150 g chicken meatballs",
+      "40 g tomato",
+      "30 g cucumber",
+      "20 g lettuce",
+      "10 g soybean sauce",
+      "20 g Greek yogurt & herb sauce"
+    ],
+    "instructions": [
+      "Form the chicken meatball mixture into one large flat patty and grill or pan-fry 6-7 minutes per side until cooked through.",
+      "Slice the tomato and pickled cucumber.",
+      "Toast the bun cut-side down for 1-2 minutes.",
+      "Build the burger: bun base, lettuce, patty, tomato, cucumber.",
+      "Drizzle with soybean sauce and Greek yogurt & herb sauce, then close with the top bun."
+    ],
+    "macros": {
+      "calories": 523,
+      "protein_g": 42.4,
+      "carbs_g": 47.0,
+      "fat_g": 18.3
+    }
+  },
+  {
+    "id": "burger-leading-light",
+    "name": "Leading Light",
+    "category": "House Burger",
+    "diet": "Omnivore",
+    "prep_min": 15,
+    "cook_min": 15,
+    "ingredients": [
+      "1 aronia & chia-seed bun",
+      "130 g grilled chicken breast",
+      "25 g white cheese",
+      "1 boiled egg",
+      "40 g tomato",
+      "20 g lettuce",
+      "10 g soybean sauce",
+      "20 g Greek yogurt & herb sauce"
+    ],
+    "instructions": [
+      "Season and grill the chicken breast 5-6 minutes per side until cooked through.",
+      "Boil the egg for 8-9 minutes, cool, peel and slice.",
+      "Toast the bun cut-side down for 1-2 minutes; slice the tomato and white cheese.",
+      "Build the burger: bun base, lettuce, chicken, cheese, egg, tomato.",
+      "Drizzle with soybean sauce and Greek yogurt & herb sauce, then close with the top bun."
+    ],
+    "macros": {
+      "calories": 592,
+      "protein_g": 59.2,
+      "carbs_g": 40.0,
+      "fat_g": 20.0
+    }
+  },
+  {
+    "id": "burger-gorgeous-gang",
+    "name": "Gorgeous Gang",
+    "category": "House Burger",
+    "diet": "Vegan",
+    "prep_min": 15,
+    "cook_min": 12,
+    "ingredients": [
+      "1 aronia & chia-seed bun",
+      "130 g vegan lentil patty",
+      "40 g tomato",
+      "30 g cucumber",
+      "20 g red onion",
+      "20 g lettuce",
+      "10 g soybean sauce",
+      "20 g beet & peanut butter sauce"
+    ],
+    "instructions": [
+      "Form and pan-fry the lentil patty, 3-4 minutes per side, until golden and heated through.",
+      "Slice the tomato, cucumber and red onion.",
+      "Toast the bun cut-side down for 1-2 minutes.",
+      "Build the burger: bun base, lettuce, lentil patty, tomato, cucumber, red onion.",
+      "Drizzle with soybean sauce and beet & peanut butter sauce, then close with the top bun."
+    ],
+    "macros": {
+      "calories": 527,
+      "protein_g": 22.8,
+      "carbs_g": 72.2,
+      "fat_g": 17.1
+    }
+  }
+]
