@@ -23,9 +23,12 @@ from recipe_utils import TIMEZONE, format_recipe, recipe_for_date
 
 def main() -> int:
     now = datetime.now(TIMEZONE)
-    if now.hour != 7:
+    forced = os.environ.get("FORCE_SEND") == "true"
+    if now.hour != 7 and not forced:
         print(f"Local time is {now.isoformat()} (hour={now.hour}), not the 07:00 window; skipping.")
         return 0
+    if forced:
+        print(f"FORCE_SEND set (manual run) -- sending now regardless of local hour ({now.isoformat()}).")
 
     token = os.environ["TELEGRAM_BOT_TOKEN"]
     chat_id = os.environ["TELEGRAM_CHAT_ID"]

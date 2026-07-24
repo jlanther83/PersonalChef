@@ -22,4 +22,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # Manual "Run workflow" clicks always send immediately, regardless
+          # of local time; the real 07:00 schedule still gates on the hour.
+          FORCE_SEND: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
         run: python3 send_daily.py
