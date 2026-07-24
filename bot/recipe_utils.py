@@ -31,6 +31,35 @@ def recipe_for_date(d: date) -> dict:
     return RECIPES_BY_ID[ROTATION[idx]]
 
 
+def shown_today(state: dict, today: date) -> list:
+    """Recipe ids already shown (via /dinner or /another) so far today."""
+    shown = state.get("shown_today")
+    if not shown or shown.get("date") != today.isoformat():
+        return []
+    return shown.get("ids", [])
+
+
+def record_shown(state: dict, today: date, recipe_id: str) -> None:
+    ids = shown_today(state, today)
+    if recipe_id not in ids:
+        ids.append(recipe_id)
+    state["shown_today"] = {"date": today.isoformat(), "ids": ids}
+
+
+def pick_another(state: dict, today: date) -> dict:
+    """Pick a recipe different from everything shown today, if possible."""
+    shown = shown_today(state, today)
+    candidates = [r for r in RECIPES if r["id"] not in shown]
+    if not candidates:
+        # Already cycled through every recipe today -- just avoid repeating
+        # the very last one shown rather than refusing to answer.
+        last = shown[-1] if shown else None
+        candidates = [r for r in RECIPES if r["id"] != last] or RECIPES
+    choice = random.choice(candidates)
+    record_shown(state, today, choice["id"])
+    return choice
+
+
 def format_recipe(recipe: dict, heading: str) -> str:
     m = recipe["macros"]
     lines = [

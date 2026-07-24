@@ -1,7 +1,9 @@
 # PersonalChef Telegram Bot
 
 Sends a dinner recipe (Power Bowl / High-Protein Wrap / House Burger) every
-morning at 07:00 CET, and answers `/dinner`, `/next`, and `/another` on demand.
+morning at 07:00 CET, and answers `/dinner`, `/next`, and `/another` on demand
+-- entirely through GitHub Actions, so nothing needs to stay running on your
+own computer.
 
 The 19 recipes in `recipes.json` are home-cook versions inspired by real dish
 names and ingredients from the Green & Protein (Tirana) menu. That menu lists
@@ -18,27 +20,36 @@ Sharp Vinaigrette and Greek Yogurt & Herb Sauce weren't part of the supplied
 formulas, so those two are simple homemade versions — swap them in
 `build_recipes.py` and re-run it if exact formulas become available.
 
-## Two independent halves
+## Two GitHub Actions workflows, both free forever
 
-This is split into two pieces that don't depend on each other:
+Telegram bots normally need a process running 24/7 to answer messages. A
+GitHub Actions job can't do that directly — jobs are capped at 6 hours, and
+using Actions to host a persistent service goes against GitHub's usage
+policies. So instead, this uses the pattern Actions is actually built for:
+short scheduled jobs.
 
-1. **Automatic 07:00 CET daily message** — a GitHub Actions workflow
-   (`.github/workflows/daily-dinner.yml`) that runs `send_daily.py` on a
-   schedule. This runs on GitHub's servers, for free, forever, with nothing
-   of yours needing to stay on. This is the part covered by this setup.
-2. **On-demand `/dinner`, `/next`, and `/another`** — handled by `bot.py`,
-   which only answers while it's actually running somewhere (see "Running the
-   on-demand bot" below). It is **not** running continuously right now; start
-   it whenever you want to use those commands. This includes `/another` — if
-   you don't like the day's suggestion, this only works at the moment the bot
-   is running, same as `/dinner` and `/next`.
+1. **`daily-dinner.yml`** runs `send_daily.py` on a schedule and pushes the
+   day's recipe at 07:00 CET, every morning, automatically.
+2. **`respond-commands.yml`** runs `poll_once.py` every 5 minutes (the
+   shortest interval GitHub allows) -- it checks Telegram for any new
+   `/dinner`, `/next`, or `/another` message, answers it, and exits.
+   **Replies land within roughly 5 minutes, not instantly** — that's the
+   tradeoff for this being free and not requiring anything of yours to stay
+   on.
 
-Both sides share the same recipe rotation (`recipe_utils.py`), so whichever
-one you use on a given day always names the same dish.
+Both scripts share the same recipe rotation (`recipe_utils.py`), so whichever
+one answers on a given day always names the same dish, and `/another`'s
+"don't repeat today" memory (`state.json`) is shared and committed back to
+the repo by `respond-commands.yml` after each run that had new messages.
+
+**Maintenance note:** GitHub automatically disables scheduled workflows after
+60 days with no commits to the repository. If replies or the daily message
+ever stop, check the repo's **Actions** tab for a "workflow disabled" banner
+and re-enable it there (any small commit also resets the clock).
 
 ## One-time setup: GitHub repository secrets
 
-The workflow needs your bot token and your Telegram chat ID, stored as
+Both workflows need your bot token and your Telegram chat ID, stored as
 **repository secrets** (encrypted, never visible in logs or code):
 
 1. On GitHub, open this repository → **Settings** → **Secrets and variables**
@@ -50,35 +61,37 @@ The workflow needs your bot token and your Telegram chat ID, stored as
    - Name: `TELEGRAM_CHAT_ID` — Value: your Telegram chat ID.
    - Click **Add secret**.
 
-Once both secrets exist, the workflow sends the message automatically every
-morning — nothing else to do. You can also trigger it manually any time from
-the **Actions** tab → **Daily Dinner Reminder** → **Run workflow**, to test it
-without waiting for 07:00.
+Once both secrets exist, everything runs automatically — nothing else to do.
+You can also trigger either workflow manually any time from the **Actions**
+tab → pick the workflow → **Run workflow**, to test without waiting.
 
 ## Files
-- `recipe_utils.py` — shared recipe rotation + message formatting
+- `recipe_utils.py` — shared recipe rotation, "don't repeat today" picking
+  logic, and message formatting
+- `state_store.py` — tiny helper for reading/writing `state.json`
+- `state.json` — committed state: Telegram update offset (so `poll_once.py`
+  never re-reads an old message) and which recipes have been shown today.
+  Contains no personal data or secrets — chat ID and token both come from
+  repository secrets instead, since this repo is public.
 - `send_daily.py` — sends today's recipe via the Telegram HTTP API directly
-  (no dependencies); this is what the GitHub Actions workflow runs
-- `bot.py` — the on-demand bot: `/start`, `/dinner`, `/next`, `/another`
+  (no dependencies); run by `daily-dinner.yml`
+- `poll_once.py` — checks for and answers one batch of new commands, then
+  exits; run by `respond-commands.yml`
+- `bot.py` — optional interactive long-polling bot for local testing only
+  (see below) — answers instantly, but **do not run it at the same time as
+  `respond-commands.yml`**; two pollers on the same bot token intermittently
+  conflict (Telegram returns HTTP 409 to whichever one is second)
 - `recipes.json` — the 19-recipe database (generated file)
 - `data/build_recipes.py` — regenerates `recipes.json` if you ever want to
   tweak an ingredient amount or nutrition figure
-- `subscriber.json` — created automatically the first time you send `/start`
-  to the bot; stores your Telegram chat ID (same value as the
-  `TELEGRAM_CHAT_ID` secret above) plus which recipes `/another` has already
-  shown you today, so it never repeats a dish on the same day until every
-  recipe in the database has come up once
 
-## Running the on-demand bot
+## Optional: running the interactive bot locally
 
-Only needed for `/dinner`, `/next`, and `/another` — the daily 07:00 message
-works without this.
+Only useful for instant replies during local testing/development — the two
+GitHub Actions workflows above already cover normal use for free, with no
+machine of yours needing to stay on.
 ```
 pip install -r requirements.txt
 cp .env.example .env   # then paste your bot token into .env
 python3 bot.py
 ```
-This needs to be running and connected to the internet for those commands to
-answer. Leave it running in a terminal (`nohup python3 bot.py &` to background
-it), on any machine that's on — your own computer, a spare Raspberry Pi, or a
-small always-on host. Ask any time if you'd like help setting that up.
